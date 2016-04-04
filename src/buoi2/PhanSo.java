@@ -30,7 +30,7 @@ public class PhanSo {
 		kq.setTu(this.getTu() * b.getMau() + this.getMau()* b.getTu());
 		kq.setMau(this.getMau() * b.getMau());
 		kq.ToiGian();
-		//System.out.println("Tổng 2 phân số là:");
+		System.out.println("Tổng 2 phân số là:");
 		return kq;		
 	}
 	
@@ -48,7 +48,7 @@ public class PhanSo {
 		kq.setTu(this.getTu() *b.getTu());
 		kq.setMau(this.getMau() * b.getMau());
 		kq.ToiGian();
-	//	System.out.println("Tích 2 phân số là:");
+		System.out.println("Tích 2 phân số là:");
 		return kq;		
 	}
 	

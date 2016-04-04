@@ -7,7 +7,7 @@ public class DateDemo {
    public static void main(String args[]) {
       SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd"); 
 
-      String input = args.length == 0 ? "1818-11-11" : args[0]; 
+      String input = args.length != 0 ? "1818-11-11" : "2016-13-30"; 
 
       System.out.print(input + " Parses as "); 
 
