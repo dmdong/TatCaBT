@@ -6,7 +6,7 @@ public class decodeApp {
 		// TODO Auto-generated method stub
 		
 		IO.DocSoChan(IO.ReadData("E:/Android Programming/Baitap/src/decode/data/even"));
-		//IO.DocSoChan(IO.ReadData("data/even"));
+		IO.DocSoChan(IO.ReadData("./src/decode/data/even"));
 		
 		IO.Decodeso3(IO.ReadData("E:/Android Programming/Baitap/src/decode/data/relate_3"));
 		

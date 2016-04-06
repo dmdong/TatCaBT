@@ -5,7 +5,7 @@ public class Bt2_NguyenTo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int n=113;
+		int n=2;
 		boolean kq= KTNguyenTo(n);
 		System.out.println(kq);
 		
