@@ -1,8 +1,9 @@
 package qlhv;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class HocVien {
+public class HocVien implements Serializable{
 	private int maHV;
 	private String tenHV, ngaySinh, email, diaChi, soDT;
 
@@ -18,18 +19,20 @@ public class HocVien {
 
 
 	//Khời tạo truyền tham số
-
+	public HocVien (String tenHV, String ngaySinh, String email, String diaChi, String soDT){
+		
+	}
 
 	
 	//Hàm nhập xuất học viên
-	public void NhapHV(int soluonghv){
-		//HocVien moi = new HocVien();
-		this.setMaHV(soluonghv+1);
+	public void NhapHV(int SLHV){
+		this.setMaHV(++SLHV);
 		this.setTenHV(tenHV);
 		this.setNgaySinh(ngaySinh);
 		this.setEmail(email);
 		this.setDiaChi(diaChi);
 		this.setSoDT(soDT);
+		
 		System.out.println("Đã nhập xong học viên có Mã Số "+getMaHV());		
 	}
 	
@@ -123,7 +126,11 @@ public class HocVien {
 
 	}
 
-
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return tenHV+ "\t" + ngaySinh + "\t" + email +"\t" + diaChi + "\t" + soDT;
+	}
 
 
 }

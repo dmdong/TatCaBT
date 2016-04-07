@@ -1,5 +1,7 @@
 package qlhv;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class dshv {
@@ -51,17 +53,42 @@ public class dshv {
 	public static void xemDS(){
 		System.out.println("DANH SÁCH HỌC VIÊN");
 		
-		for (int i= 0; i<SLHV; i++)
-		{
-			
-			System.out.println();
-		}
+		/*for (int i= 0; i<SLHV; i++)
+			System.out.println();		*/
+		List<HocVien> docDSHV = IOHocVien.readHV("./src/qlhv/datahocvien/dshv.txt");
+		for (HocVien k: docDSHV)
+			System.out.println(k.toString());
+		xemMenu();
 	}
 	
 	public static void themHV(){
-		HocVien moi = new HocVien();
+		/*HocVien moi = new HocVien();
 		moi.NhapHV(getSLHV());
-		SLHV++;
+		SLHV++;*/
+		//Hỏi số lượng học viên muốn thêm vào
+		
+		System.out.println("Bạn muốn nhập bao nhiêu HV?");
+		int slhvthem = new Scanner(System.in).nextInt();
+		
+		//Khởi tạo ds HocViens trước khi thêm vào
+		List<HocVien> HocViens = new ArrayList<>();
+		for (int i = 0; i<slhvthem; i++)
+			{
+			HocVien k = new HocVien();
+			k.NhapHV(SLHV);
+			HocViens.add(k);
+			}
+		
+		//Kiểm tra kết quả đã nhập vào
+		for (HocVien k: HocViens)
+			System.out.println(k.toString());
+		
+		//Ghi list Học Viên vào dshv
+		IOHocVien.writeHV("./src/qlhv/datahocvien/dshv.txt", HocViens);
+				
+		
+		
+		//Hỏi nhập tiếp
 		System.out.println("Bạn có muốn nhập thêm? C/K?");
 		//String nhap = "";
 		String nhap = new Scanner(System.in).nextLine();
