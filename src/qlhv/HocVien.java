@@ -10,11 +10,11 @@ public class HocVien implements Serializable{
 	//Khởi tạo mặc định
 	public HocVien (){
 		maHV = 0;
-		tenHV = null; //Bị lỗi khi khai bao tenHV = new String
-		ngaySinh = null;
-		email = null;
-		diaChi= null;
-		soDT = null;
+		tenHV = "Unassigned"; //Bị lỗi khi khai bao tenHV = new String
+		ngaySinh = "Unassigned";
+		email = "Unassigned";
+		diaChi= "Unassigned";
+		soDT = "Unassigned";
 	}
 
 
@@ -25,8 +25,8 @@ public class HocVien implements Serializable{
 
 	
 	//Hàm nhập xuất học viên
-	public void NhapHV(int SLHV){
-		this.setMaHV(++SLHV);
+	public void NhapHV(int stt){
+		this.setMaHV(stt);
 		this.setTenHV(tenHV);
 		this.setNgaySinh(ngaySinh);
 		this.setEmail(email);
@@ -129,7 +129,7 @@ public class HocVien implements Serializable{
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return tenHV+ "\t" + ngaySinh + "\t" + email +"\t" + diaChi + "\t" + soDT;
+		return maHV + "\t" + tenHV+ "\t" + ngaySinh + "\t" + email +"\t" + diaChi + "\t" + soDT;
 	}
 
 

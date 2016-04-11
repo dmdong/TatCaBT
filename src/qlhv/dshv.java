@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public class dshv {
 	
-	private static int SLHV = 0;
-	
+	//static List<HocVien> docDSHV = ;
+	private static String FileDS = "./src/qlhv/datahocvien/FileDS";
+	private static int SLHV = IOHocVien.readHV(FileDS).size();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		xemMenu();
@@ -36,15 +37,17 @@ public class dshv {
 			chon = new Scanner(System.in).nextInt();
 			switch (chon){
 			case 1:	xemDS(); break;
-			case 2: 
-				{
-					IO.Input();
-					IO.WriteFile("E:/DSHV.txt");
-					break;
-				}
+			case 2:	themHV(); break;
 			case 3: xoaHV(); break;
 			case 4: xemMenu(); break;
 			case 5: System.exit(1); break;
+			case 6: 
+				{
+					SLHV = 0;
+					IOHocVien.xoaDS(FileDS); 
+					xemMenu();
+					break;
+				}
 				default: System.out.println("Lựa chọn không tồn tại. Hãy chọn lại");
 			}
 		}
@@ -55,26 +58,27 @@ public class dshv {
 		
 		/*for (int i= 0; i<SLHV; i++)
 			System.out.println();		*/
-		List<HocVien> docDSHV = IOHocVien.readHV("./src/qlhv/datahocvien/dshv.txt");
+		List<HocVien> docDSHV = IOHocVien.readHV(FileDS);
+		
 		for (HocVien k: docDSHV)
 			System.out.println(k.toString());
 		xemMenu();
 	}
 	
 	public static void themHV(){
-		/*HocVien moi = new HocVien();
-		moi.NhapHV(getSLHV());
-		SLHV++;*/
-		//Hỏi số lượng học viên muốn thêm vào
 		
+		//Hỏi số lượng học viên muốn thêm vào		
 		System.out.println("Bạn muốn nhập bao nhiêu HV?");
 		int slhvthem = new Scanner(System.in).nextInt();
 		
+		//Đọc DS học viên đã có trước khi thêm vào
+		List<HocVien> HocViens = IOHocVien.readHV(FileDS);
 		//Khởi tạo ds HocViens trước khi thêm vào
-		List<HocVien> HocViens = new ArrayList<>();
+		//List<HocVien> HocViens = new ArrayList<>();
 		for (int i = 0; i<slhvthem; i++)
 			{
 			HocVien k = new HocVien();
+			SLHV++;
 			k.NhapHV(SLHV);
 			HocViens.add(k);
 			}
@@ -84,7 +88,7 @@ public class dshv {
 			System.out.println(k.toString());
 		
 		//Ghi list Học Viên vào dshv
-		IOHocVien.writeHV("./src/qlhv/datahocvien/dshv.txt", HocViens);
+		IOHocVien.writeHV(FileDS, HocViens);
 				
 		
 		
@@ -110,4 +114,5 @@ public class dshv {
 	public static void setSLHV(int sLHV) {
 		SLHV = sLHV;
 	}
+	
 }

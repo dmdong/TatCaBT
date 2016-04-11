@@ -13,15 +13,14 @@ import java.util.List;
 
 public class IOHocVien {
 
-	//Ghi Học Viên theo ObjectStream
+	//Ghiz Học Viên theo ObjectStream
 	public static void writeHV(String FileDS, List<HocVien> HocViens){
 	
 		try {
 			ObjectOutputStream OOS = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(FileDS)));
 			
 			for(HocVien a: HocViens)
-				OOS.writeObject(a);
-			
+				OOS.writeObject(a);			
 			
 			OOS.close();
 		} catch (IOException e) {
@@ -43,20 +42,25 @@ public class IOHocVien {
 				
 			} catch (EOFException e) {
 				// TODO Auto-generated catch block
-				System.out.println("het file");
+				//System.out.println("het file");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			
-			
+			}			
 			
 			OIS.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 		return HocViens;
+	}
+	
+	public static void xoaDS(String File){
+		List<HocVien> Empty = new ArrayList<>();
+		writeHV(File, Empty);
+		System.out.println("Đã xóa toàn bộ danh sách");
+		
 	}
 	
 	
