@@ -10,7 +10,7 @@ public class HocVien implements Serializable{
 	//Khởi tạo mặc định
 	public HocVien (){
 		maHV = 0;
-		tenHV = "Unassigned"; //Bị lỗi khi khai bao tenHV = new String
+		tenHV = "Unassigned"; 
 		ngaySinh = "Unassigned";
 		email = "Unassigned";
 		diaChi= "Unassigned";

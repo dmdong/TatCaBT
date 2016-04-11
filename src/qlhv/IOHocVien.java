@@ -61,8 +61,6 @@ public class IOHocVien {
 		writeHV(File, Empty);
 		System.out.println("Đã xóa toàn bộ danh sách");
 		
-	}
-	
-	
+	}	
 	
 }
