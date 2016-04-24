@@ -5,7 +5,11 @@ import java.util.Scanner;
 
 public class HocVien implements Serializable{
 	private int maHV;
-	private String tenHV, ngaySinh, email, diaChi, soDT;
+	private String tenHV;
+	private String ngaySinh;
+	private String email;
+	private String diaChi;
+	private String soDT;
 
 	//Khởi tạo mặc định
 	public HocVien (){
@@ -89,7 +93,7 @@ public class HocVien implements Serializable{
 
 	public void setSoDT(String soDT) {		
 		System.out.println("Nhập số DĐ:");
-		tenHV = new Scanner(System.in).nextLine(); 
+		soDT = new Scanner(System.in).next(); 
 		if (ValidSoDT(soDT) == true)
 			this.soDT = soDT;
 		else{

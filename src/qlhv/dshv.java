@@ -80,10 +80,15 @@ public class dshv {
 		//List<HocVien> HocViens = new ArrayList<>();
 		
 		//Xác định ID học viên cuối trong list trước khi thêm 
-		int lastHV = HocViens.size() - 1; //-1 để không bị outofbound
-		HocVien m = HocViens.get(lastHV);
-		if (m.getMaHV()< lastHV); 
-			SLHV = lastHV;
+		int lastHV = HocViens.size() ; 
+		if (lastHV>0){
+			HocVien m = HocViens.get(lastHV-1);
+			if (m.getMaHV()< lastHV) 
+				SLHV = lastHV; 
+		}
+		
+		
+		
 		for (int i = 0; i<slhvthem; i++)
 		{
 			HocVien k = new HocVien();
